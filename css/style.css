@@ -1,0 +1,110 @@
+/* 커스텀 스타일 */
+
+/* 학교 스타일 색상 테마 */
+:root {
+  --school-primary: #2563eb;
+  --school-secondary: #1e40af;
+  --school-accent: #3b82f6;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 페이지 로드 애니메이션 */
+.card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* 테이블 행 애니메이션 */
+.table tbody tr {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* 호버 효과 */
+.table tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+/* 버튼 호버 효과 강화 */
+.btn:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* 폼 포커스 효과 */
+.input:focus,
+.select:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--school-primary);
+}
+
+/* 토스트 메시지 스타일 */
+.toast {
+  z-index: 9999;
+}
+
+/* 모달 애니메이션 */
+.modal[open] .modal-box {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 반응형 테이블 */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.875rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .btn-group .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* 프린트 스타일 */
+@media print {
+  .btn,
+  .modal,
+  .toast {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .table {
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #d1d5db;
+  }
+}
